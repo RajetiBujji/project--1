@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main() {
+    int num = 375;
+    int a = num % 10;
+    int b = (num / 10) % 10;
+    int c = num / 100;
+
+    // Display initial value of num
+    printf("Initial value of num: %d\n\n", num);
+
+    // Display computation and values
+    printf("Computation and values:\n");
+    printf("num/100 = %d\n", c);
+    printf("b = %d\n", b);
+    printf("num/10 = %d\n", num / 10);
+    printf("num%%100 = %d\n", num % 100);
+    printf("(num/10)%%10 = %d\n", (num / 10) % 10);
+    printf("(num%%100)/10 = %d\n", (num % 100) / 10);
+    printf("num%%10 = %d\n", a);
+    printf("\n");
+
+    // Calculate result
+    int res = c * 100 + b * 10 + a;
+    printf("Result: %c %d%d%d\n", 'c', 100*b, 10+a, res);
+
+    return 0;
+}
