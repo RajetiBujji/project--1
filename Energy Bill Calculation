@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main() {
+   int nunits;
+   float bill;
+
+   printf("Enter the number of units: ");
+   scanf("%d", &nunits);
+
+   if (nunits <= 100) {
+      bill = 100 + nunits * 3;
+   } else if (nunits <= 200) {
+      bill = 100 + 100 * 3 + (nunits - 100) * 5;
+   } else if (nunits <= 400) {
+      bill = 100 + 100 * 3 + 100 * 5 + (nunits - 200) * 7;
+   } else {
+      bill = 100 + 100 * 3 + 100 * 5 + 200 * 7 + (nunits - 400) * 10;
+   }
+
+   printf("The total bill is: %.2f\n", bill);
+
+   return 0;
+}
