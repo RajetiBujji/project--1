@@ -1,0 +1,96 @@
+[1:17 PM, 4/29/2023] Hemanth: #include <stdio.h>
+
+int main() {
+    int a = 10;
+    int b = 20;
+    int temp = 10;
+
+    // Display initial values
+    printf("Initial values:\n");
+    printf("a = %d\n", a);
+    printf("b = %d\n", b);
+    printf("temp = %d\n\n", temp);
+
+    // temp = a
+    temp = a;
+    printf("After temp = a:\n");
+    printf("a = %d\n", a);
+    printf("b = %d\n", b);
+    printf("temp = %d\n\n", temp);
+
+    // a = b
+    a = b;
+    printf("After a = b:\n");
+    printf("a = %d\n", a);
+    printf("b = %d\n", b);
+    printf("temp = %d\n\n", temp);
+
+    // b = temp
+    b = temp;
+    printf("After b = temp:\n");
+    printf("a = %d\n", a);
+    printf("b = %d\n", b);
+    printf("temp = %d\n\n", temp);
+
+    // Alternate Logic
+    a = 10;
+    b = 20;
+    temp = 10;
+
+    printf("Alternate Logic:\n");
+
+    // a = a + b
+    a = a + b;
+    printf("After a = a + b:\n");
+    printf("a = %d\n", a);
+    printf("b = %d\n", b);
+
+    // a = a ^ b
+    a = a ^ b;
+    printf("After a = a ^ b:\n");
+    printf("a = %d\n", a);
+    printf("b = %d\n", b);
+
+    // b = a - b
+    b = a - b;
+    printf("After b = a - b:\n");
+    printf("a = %d\n", a);
+    printf("b = %d\n", b);
+
+    // a = a - b
+    a = a - b;
+    printf("After a = a - b:\n");
+    printf("a = %d\n", a);
+    printf("b = %d\n", b);
+
+    return 0;
+}
+[1:17 PM, 4/29/2023] Hemanth: 1.4
+[1:19 PM, 4/29/2023] Hemanth: #include <stdio.h>
+
+int main() {
+    int num = 375;
+    int a = num % 10;
+    int b = (num / 10) % 10;
+    int c = num / 100;
+
+    // Display initial value of num
+    printf("Initial value of num: %d\n\n", num);
+
+    // Display computation and values
+    printf("Computation and values:\n");
+    printf("num/100 = %d\n", c);
+    printf("b = %d\n", b);
+    printf("num/10 = %d\n", num / 10);
+    printf("num%%100 = %d\n", num % 100);
+    printf("(num/10)%%10 = %d\n", (num / 10) % 10);
+    printf("(num%%100)/10 = %d\n", (num % 100) / 10);
+    printf("num%%10 = %d\n", a);
+    printf("\n");
+
+    // Calculate result
+    int res = c * 100 + b * 10 + a;
+    printf("Result: %c %d%d%d\n", 'c', 100*b, 10+a, res);
+
+    return 0;
+}
