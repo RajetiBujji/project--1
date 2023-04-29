@@ -1,0 +1,42 @@
+#include <stdio.h>
+
+int main() {
+    float basic, da, hra, gross, savings, taxable_income, tax, net;
+
+    // Input basic pay
+    printf("Enter basic pay: ");
+    scanf("%f", &basic);
+
+    // Calculate DA and HRA
+    da = 0.15 * basic;
+    hra = 0.08 * basic;
+
+    // Calculate gross and taxable income
+    gross = basic + da + hra;
+    printf("Gross salary: %.2f\n", gross);
+
+    printf("Enter savings: ");
+    scanf("%f", &savings);
+
+    taxable_income = gross - savings;
+    printf("Taxable income: %.2f\n", taxable_income);
+
+    // Calculate tax
+    if (taxable_income <= 250000) {
+        tax = 0;
+    } else if (taxable_income <= 500000) {
+        tax = 0.1 * (taxable_income - 250000);
+    } else if (taxable_income <= 1000000) {
+        tax = 0.2 * (taxable_income - 500000) + 25000;
+    } else {
+        tax = 0.3 * (taxable_income - 1000000) + 125000;
+    }
+
+    printf("Tax: %.2f\n", tax);
+
+    // Calculate net salary
+    net = gross - tax - savings;
+    printf("Net salary: %.2f\n", net);
+
+    return 0;
+}
