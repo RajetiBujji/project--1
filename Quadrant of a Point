@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main() {
+   int x, y;
+
+   printf("Enter the coordinates of the point: ");
+   scanf("%d %d", &x, &y);
+
+   if (x > 0 && y > 0) {
+      printf("The point is in Quadrant 1.\n");
+   } else if (x < 0 && y > 0) {
+      printf("The point is in Quadrant 2.\n");
+   } else if (x < 0 && y < 0) {
+      printf("The point is in Quadrant 3.\n");
+   } else if (x > 0 && y < 0) {
+      printf("The point is in Quadrant 4.\n");
+   } else if (x == 0 && y != 0) {
+      printf("The point is on the y-axis.\n");
+   } else if (y == 0 && x != 0) {
+      printf("The point is on the x-axis.\n");
+   } else {
+      printf("The point is at the origin.\n");
+   }
+
+   return 0;
+}
