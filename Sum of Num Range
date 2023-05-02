@@ -1,0 +1,13 @@
+#include <stdio.h>
+
+int main() {
+    int start = 16, end = 25, sum = 0, i;
+
+    for (i = start; i <= end; i++) {
+        sum += i;
+        printf("%d\n", i);
+        printf("%d\n", sum);
+    }
+
+    return 0;
+}
