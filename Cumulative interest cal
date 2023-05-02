@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    float principle = 1000;
+    float annual_interest_rate = 12;
+    float quarterly_interest_rate = annual_interest_rate / 4 / 100;
+    int n_quarters = 8;
+    float total_amount = principle;
+
+    printf("Quarter\tPrinciple\tInterest\tAccumulated Amount\n");
+    for (int i = 1; i <= n_quarters; i++) {
+        float interest = principle * quarterly_interest_rate;
+        principle += interest;
+        total_amount += interest;
+        printf("%d\t%.3f\t\t%.5f\t\t%.3f\n", i, principle, interest, total_amount);
+    }
+
+    float compound_interest = principle * pow(1 + quarterly_interest_rate, n_quarters);
+    printf("Total amount with simple interest = %.3f\n", total_amount);
+    printf("Total amount with compound interest = %.3f\n", compound_interest);
+    printf("Difference = %.3f\n", compound_interest - total_amount);
+
+    return 0;
+}
