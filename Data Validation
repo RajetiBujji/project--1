@@ -1,0 +1,63 @@
+#include <stdio.h>
+#include <stdbool.h>
+#include <ctype.h>
+#include <string.h>
+
+bool isAlphanumeric(char c) {
+    return isalnum(c) != 0;
+}
+
+bool isLowercaseAlphabet(char c) {
+    return isalpha(c) && islower(c);
+}
+
+bool isValidEmail(char* email) {
+    char* atSign = strchr(email, '@');
+    if (atSign == NULL) {
+        return false;
+    }
+    
+    char* domain = atSign + 1;
+    char* ext = strrchr(domain, '.');
+    if (ext == NULL || ext == domain) {
+        return false;
+    }
+    
+    for (char* c = email; c < atSign; c++) {
+        if (!isAlphanumeric(*c) && *c != '.') {
+            return false;
+        }
+    }
+    
+    for (char* c = domain; c < ext; c++) {
+        if (!isLowercaseAlphabet(*c)) {
+            return false;
+        }
+    }
+    
+    for (char* c = ext + 1; *c != '\0'; c++) {
+        if (!isLowercaseAlphabet(*c)) {
+            return false;
+        }
+    }
+    
+    return true;
+}
+
+int main() {
+    char email1[] = "hello@example.com";
+    char email2[] = "hello@example.org";
+    char email3[] = "\"mail2friend\"@hi5.com";
+    char email4[] = "\"mail2admin\"@Prog.org";
+    char email5[] = "guest user@example.in";
+    char email6[] = "guest.user@example.com";
+    
+    printf("%s: %s\n", email1, isValidEmail(email1) ? "Valid" : "Invalid");
+    printf("%s: %s\n", email2, isValidEmail(email2) ? "Valid" : "Invalid");
+    printf("%s: %s\n", email3, isValidEmail(email3) ? "Valid" : "Invalid");
+    printf("%s: %s\n", email4, isValidEmail(email4) ? "Valid" : "Invalid");
+    printf("%s: %s\n", email5, isValidEmail(email5) ? "Valid" : "Invalid");
+    printf("%s: %s\n", email6, isValidEmail(email6) ? "Valid" : "Invalid");
+    
+    return 0;
+}
