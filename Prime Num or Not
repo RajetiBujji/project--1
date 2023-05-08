@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <stdbool.h>
+
+int main() {
+    int N = 35; // assume N is 35
+    bool flag = true; // assume flag is true
+    int i, rem;
+    
+    for (i = 2; i <= N-1; i++) {
+        rem = N % i;
+        if (rem != 0) {
+            flag = true;
+        } else {
+            flag = false;
+            break;
+        }
+    }
+    
+    if (flag == true) {
+        printf("All remainders are not zero\n");
+    } else {
+        printf("At least one remainder is zero\n");
+    }
+    
+    return 0;
+}
