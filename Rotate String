@@ -1,0 +1,52 @@
+#include <stdio.h>
+#include <string.h>
+
+void rotate_string(char str[], int k, char direction[]) {
+    int len = strlen(str);
+    char temp[len+1];
+
+    if (strcmp(direction, "Left") == 0) {
+        
+        strncpy(temp, str, k);
+        temp[k] = '\0';
+
+        
+        memmove(str, str + k, len - k);
+
+        
+        strcpy(str + len - k, temp);
+    }
+    else if (strcmp(direction, "Right") == 0) {
+        
+        strncpy(temp, str + len - k, k);
+        temp[k] = '\0';
+
+        memmove(str + k, str, len - k);
+
+        
+        strncpy(str, temp, k);
+    }
+}
+
+int main() {
+    char str[100], direction[10];
+    int k;
+
+    printf("Enter a string: ");
+    fgets(str, sizeof(str), stdin);
+
+    printf("Enter the number of positions to rotate: ");
+    scanf("%d", &k);
+
+    printf("Enter the direction of rotation (Left/Right): ");
+    scanf("%s", direction);
+
+    
+    str[strcspn(str, "\n")] = '\0';
+
+    rotate_string(str, k, direction);
+
+    printf("Rotated string: %s\n", str);
+
+    return 0;
+}
