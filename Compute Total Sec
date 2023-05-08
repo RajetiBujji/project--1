@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main() {
+    char time_str[9];
+    int hh, mm, ss;
+    unsigned long total_seconds;
+
+    // Input time string
+    printf("Enter time in hh:mm:ss format: ");
+    fgets(time_str, 9, stdin);
+
+    // Split time string into hh, mm, ss
+    hh = strtol(strtok(time_str, ":"), NULL, 10);
+    mm = strtol(strtok(NULL, ":"), NULL, 10);
+    ss = strtol(strtok(NULL, ":"), NULL, 10);
+
+    // Compute total seconds
+    total_seconds = hh * 3600 + mm * 60 + ss;
+
+    // Output total seconds
+    printf("Total seconds: %lu\n", total_seconds);
+
+    return 0;
+}
