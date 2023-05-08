@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <ctype.h>
+
+int main() {
+    char input[100], output[100];
+    int i;
+
+    printf("Enter a string: ");
+    gets(input);
+
+    for (i = 0; input[i] != '\0'; i++) {
+        if (isupper(input[i])) {
+            output[i] = tolower(input[i]);
+        } else if (islower(input[i])) {
+            output[i] = toupper(input[i]);
+        } else {
+            output[i] = input[i];
+        }
+    }
+
+    output[i] = '\0';
+
+    printf("Output: %s\n", output);
+
+    return 0;
+}
