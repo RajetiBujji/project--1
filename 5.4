@@ -1,0 +1,39 @@
+#include <stdio.h>
+
+int main() {
+    float arr[] = {5.4, 64, 84, 21, 36, 17, 90, 77, 10, 48, 55};
+    int len = sizeof(arr) / sizeof(arr[0]);
+
+    // Calculate difference between even and odd elements
+    int diff = 0;
+    for (int i = 0; i < len; i++) {
+        if ((int)arr[i] % 2 == 0) {
+            diff += arr[i];
+        } else {
+            diff -= arr[i];
+        }
+    }
+    printf("%d\n", diff);
+
+    // Print even elements
+    int even_sum = 0;
+    for (int i = 0; i < len; i++) {
+        if ((int)arr[i] % 2 == 0) {
+            printf("%.0f\n", arr[i]);
+            even_sum += arr[i];
+        }
+    }
+    printf("%d\n", even_sum);
+
+    // Print odd elements
+    int odd_sum = 0;
+    for (int i = 0; i < len; i++) {
+        if ((int)arr[i] % 2 != 0) {
+            printf("%.0f\n", arr[i]);
+            odd_sum += arr[i];
+        }
+    }
+    printf("%d\n", odd_sum);
+
+    return 0;
+}
