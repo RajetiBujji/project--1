@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main()
+{
+    int end, total = 0, triangularNum = 0;
+    printf("Enter the end number: ");
+    scanf("%d", &end);
+    
+    for(int n=1; n<=end; n++)
+    {
+        triangularNum += n; // Calculate triangular number
+        total += triangularNum; // Add to total
+    }
+    
+    printf("The sum of the triangular numbers from 1 to %d is %d", end, total);
+    return 0;
+}
