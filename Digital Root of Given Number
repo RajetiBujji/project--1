@@ -1,0 +1,44 @@
+#include <stdio.h>
+
+// Function to calculate the digital root of a number
+int digitalRoot(int num) {
+  int sum = 0;
+
+  // Calculate the sum of digits in the number
+  while (num != 0) {
+    sum += num % 10;
+    num /= 10;
+  }
+
+  // If the sum is greater than or equal to 10, recursively
+  // calculate the digital root of the sum
+  if (sum >= 10) {
+    sum = digitalRoot(sum);
+  }
+
+  return sum;
+}
+
+int main() {
+  int num, sum;
+
+  // Example 1
+  printf("Example 1:\n");
+  num = 22;
+  sum = digitalRoot(num);
+  printf("Digital root of %d is %d\n\n", num, sum);
+
+  // Example 2
+  printf("Example 2:\n");
+  num = 78798;
+  int iter = 1;
+  while (sum >= 10) {
+    sum = digitalRoot(num);
+    printf("Outer Loop Iter %d\nNum = %d\n", iter, num);
+    printf("Sum of Digits = %d\n\n", sum);
+    num = sum;
+    iter++;
+  }
+
+  return 0;
+}
