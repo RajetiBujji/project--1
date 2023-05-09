@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main() {
+    int arr[10], len, i;
+    float sum = 0.0, avg;
+
+    printf("Enter the length of the array (max 10): ");
+    scanf("%d", &len);
+
+    printf("Enter %d elements in the array:\n", len);
+    for (i = 0; i < len; i++) {
+        scanf("%d", &arr[i]);
+        sum += arr[i];
+    }
+
+    avg = sum / len;
+
+    printf("The sum of the elements is: %.2f\n", sum);
+    printf("The average of the elements is: %.2f\n", avg);
+
+    return 0;
+}
