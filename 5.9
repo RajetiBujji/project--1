@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+// Function to check if a year is a leap year or not
+int isLeapYear(int year) {
+    if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
+        return 1;
+    } else {
+        return 0;
+    }
+}
+
+int main() {
+    float day = 5.9;
+    int dd = 0, mm = 0, yy = 0, days_elapsed = 0;
+
+    // Input the date in dd, mm, yy format
+    printf("Enter the date in dd mm yyyy format: ");
+    scanf("%d %d %d", &dd, &mm, &yy);
+
+    // Array to store the number of days in each month
+    int days_in_month[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+
+    // If it's a leap year, February has 29 days instead of 28
+    if (isLeapYear(yy)) {
+        days_in_month[1] = 29;
+    }
+
+    // Calculate the number of days elapsed
+    for (int i = 0; i < mm - 1; i++) {
+        days_elapsed += days_in_month[i];
+    }
+    days_elapsed += dd;
+
+    // Output the number of days elapsed
+    printf("Number of days elapsed: %d\n", days_elapsed);
+
+    return 0;
+}
