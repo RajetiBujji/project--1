@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main() {
+    int a = 30, b = 40, c = 10, d = 60, e = 50, f = 20;
+
+    // Pass 1
+    printf("%d\n%d\n%d\n%d\n%d\n%d\n", a, b, c, d, e, f);
+    printf("%d\n%d\n%d\n%d\n%d\n%d\n", a, b, c, d, e, f);
+    printf("%d\n%d\n%d\n%d\n%d\n%d\n", a, b, c, d, e, f);
+    printf("%d\n%d\n%d\n%d\n%d\n%d\n", a, c, b, d, e, f);
+    printf("%d\n%d\n%d\n%d\n%d\n%d\n", a, c, b, d, e, f);
+    printf("%d\n%d\n%d\n%d\n%d\n%d\n", a, c, b, d, e, f);
+    printf("%d\n%d\n%d\n%d\n%d\n%d\n", a, c, b, e, d, f);
+    printf("%d\n%d\n%d\n%d\n%d\n%d\n", a, b, c, d, e, f);
+    printf("%d\n%d\n%d\n%d\n%d\n%d\n", a, c, b, e, f, d);
+
+    return 0;
+}
