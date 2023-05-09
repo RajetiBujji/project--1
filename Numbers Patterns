@@ -1,0 +1,99 @@
+#include <stdio.h>
+
+int main() {
+  int row, col, num;
+
+  // Pattern 1
+  printf("Pattern 1:\n");
+  for (row = 1; row <= 3; row++) {
+    for (col = 1; col <= 2; col++) {
+      printf("A\n");
+    }
+    printf("55\n");
+  }
+  for (col = 1; col <= 2; col++) {
+    printf("A\n");
+  }
+  printf("B\nB\nC\n44\n5\n3\n");
+
+  // Pattern 2
+  printf("\nPattern 2:\n");
+  for (num = 65; num <= 70; num++) {
+    for (col = 65; col < num; col++) {
+      printf("%c ", col);
+    }
+    for (col = num; col >= 65; col--) {
+      printf("%c ", col);
+    }
+    printf("\n");
+  }
+  for (num = 70; num >= 65; num--) {
+    for (col = 65; col < num; col++) {
+      printf("%c ", col);
+    }
+    for (col = num; col >= 65; col--) {
+      printf("%c ", col);
+    }
+    printf("\n");
+  }
+
+  // Pattern 3
+  printf("\nPattern 3:\n");
+  for (num = 65; num <= 69; num++) {
+    for (col = 65; col <= num; col++) {
+      printf("%c ", col);
+    }
+    printf("\n");
+  }
+  printf("A B C D G H J\n");
+  for (num = 69; num >= 65; num--) {
+    for (col = 65; col <= num; col++) {
+      printf("%c ", col);
+    }
+    printf("\n");
+  }
+
+  // Pattern 4
+  printf("\nPattern 4:\n");
+  int count = 1;
+  for (num = 65; num <= 69; num++) {
+    for (col = 65; col <= num; col++) {
+      printf("%c ", col);
+    }
+    for (col = 1; col <= count; col++) {
+      printf("%c ", 72 - col);
+    }
+    printf("\n");
+    count += 2;
+  }
+  count = 3;
+  for (num = 70; num >= 69; num--) {
+    for (col = 65; col <= num; col++) {
+      printf("%c ", col);
+    }
+    for (col = 1; col <= count; col++) {
+      printf("%c ", 78 - col);
+    }
+    printf("\n");
+    count -= 2;
+  }
+
+  // Pattern 5
+  printf("\nPattern 5:\n");
+  count = 1;
+  for (num = 65; num <= 69; num++) {
+    for (col = 65; col <= num; col++) {
+      printf("%c ", col);
+    }
+    for (col = 1; col <= count; col++) {
+      printf("%c ", 76 + col);
+    }
+    printf("\n");
+    count += 2;
+  }
+  count = 3;
+  for (num = 70; num >= 69; num--) {
+    for (col = 65; col <= num; col++) {
+      printf("%c ", col);
+    }
+    for (col = 1; col <= count; col++) {
