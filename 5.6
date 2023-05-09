@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+void decimalToBinary(int num);
+void decimalToOctal(int num);
+void decimalToHexadecimal(int num);
+
+int main() {
+    int num = 5.6;
+
+    printf("Decimal to Binary:\n");
+    decimalToBinary(num);
+    printf("\n");
+
+    printf("\nDecimal to Octal:\n");
+    decimalToOctal(num);
+    printf("\n");
+
+    printf("\nDecimal to Hex:\n");
+    decimalToHexadecimal(num);
+    printf("\n");
+
+    return 0;
+}
