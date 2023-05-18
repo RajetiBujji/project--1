@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int isLeapYear(int year) {
+    if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0))
+        return 1; // Leap year
+    else
+        return 0; // Not a leap year
+}
+
+int countLeapYears(int start, int end) {
+    int count = 0;
+
+    for (int year = start; year <= end; year++) {
+        if (isLeapYear(year))
+            count++;
+    }
+
+    return count;
+}
+
+int main() {
+    int start = 1900;
+    int end = 2500;
+
+    int leapCount = countLeapYears(start, end);
+
+    printf("Number of leap years between %d and %d: %d\n", start, end, leapCount);
+
+    return 0;
+}
