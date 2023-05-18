@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main() {
+    int arr[] = {648, 420, 361, 290, 721, 45, 56, 184, 64, 220, 203, 362, 412, 125, 901, 267, 212, 710, 108, 451, 109, 561};
+    int size = sizeof(arr) / sizeof(arr[0]);
+    int min = arr[0];
+    int max = arr[0];
+
+    for (int i = 1; i < size; i++) {
+        if (arr[i] < min) {
+            min = arr[i];
+        }
+        if (arr[i] > max) {
+            max = arr[i];
+        }
+    }
+
+    printf("Minimum value: %d\n", min);
+    printf("Maximum value: %d\n", max);
+
+    return 0;
+}
